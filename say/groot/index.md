@@ -15,7 +15,7 @@ var phrase_parts = [
 
 var text = [];
 for (var i = 0; i < phrase_parts.length; i++) {
-    var part = prase_parts[i];
+    var part = phrase_parts[i];
     text.push(part[Math.floor(Math.random() * part.length)]);
 }
 
