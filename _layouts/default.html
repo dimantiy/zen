@@ -15,16 +15,128 @@
 			vertical-align: middle;
 			text-align: center;
 		}
+
+		.corner {
+			display: block;
+			position: absolute;
+			padding: 1em;
+			color: silver;
+			font-size: 0.75em;
+		}
+
+		.corner a,
+		.corner a:hover {
+			color: gray;
+		}
+
+		a.action {
+			text-decoration-style: dashed;
+		}
+
+		#home {
+			top: 0;
+			left: 0;
+		}
+
+		#global_settings {
+			top: 0;
+			right: 0;
+		}
+
+		#local_settings {
+			bottom: 0;
+			left: 0;
+		}
+
+		#copyright {
+			bottom: 0;
+			right: 0;
+		}
+
+		.dark {
+			background: black;
+			color: white;
+		}
+
+		.dark .corner {
+			color: gray;
+		}
+
+		.dark .corner a,
+		.dark .corner a:hover {
+			color: silver;
+		}
+
+		.btn-light {
+			display: none;
+		}
+
+		.dark .btn-dark {
+			display: none;
+		}
+
+		.dark .btn-light {
+			display: inline;
+		}
 	</style>
 </head>
-<body>
+<body onload="init()">
 	<table>
 		<tr>
-			<td>
+			<td id="content">
+				<h1>Test</h1>
 				{{ content }}
 			</td>
 		</tr>
 	</table>
+	<div id="home" class="corner"><a href="http://zen.sapiens.ws/">Zen</a></div>
+	<div id="global_settings" class="corner"></div>
+	<div id="local_settings" class="corner">
+		<a href="#" class="action btn-dark" onclick="makeDark()">Dark</a>
+		<a href="#" class="action btn-light" onclick="makeLight()">Light</a>
+	</div>
+	<div id="copyright" class="corner">
+		Created by <a href="mailto:zen@sapiens.ws">Dmitriy Pankov</a>
+	</div>
 </body>
+
+<script type="text/javascript">
+var STORAGE_THEME_KEY = "zen-sapiens-ws-theme";
+var STORAGE_THEME_DARK = "dark";
+var STORAGE_THEME_LIGHT = "";
+
+function saveTheme(value) {
+	if (localStorage) {
+		localStorage.setItem(STORAGE_THEME_KEY, value);
+	}
+}
+
+function readTheme() {
+	if (localStorage) {
+		return localStorage.getItem(STORAGE_THEME_KEY); 
+	}
+	return STORAGE_THEME_LIGHT;
+}
+
+function makeDark() {
+	var classes = document.body.className.split(' ');
+	classes.push('dark');
+	document.body.className = classes.join(' ');
+	saveTheme(STORAGE_THEME_DARK);
+}
+
+function makeLight() {
+	var classes = document.body.className.split(' ');
+	classes = classes.filter(function (x) { return x !== 'dark'; });
+	document.body.className = classes.join(' ');
+	saveTheme(STORAGE_THEME_LIGHT);
+}
+function init() {
+	var theme = readTheme();
+	if (theme === STORAGE_THEME_DARK) {
+		makeDark();
+	}
+}
+</script>
 
 </html>
