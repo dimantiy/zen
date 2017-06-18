@@ -5,7 +5,7 @@ title: I am Groot!
 <script>
 (function () {
 
-var groot_node = document.getElementById("i_am_groot");
+var groot_node = document.getElementById("i-am-groot");
 var phrase_parts = [
     ["I"],
     [" am ", "'m "],
