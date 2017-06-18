@@ -20,12 +20,11 @@
 			display: block;
 			position: absolute;
 			padding: 1em;
-			color: silver;
+			color: gray;
 			font-size: 0.75em;
 		}
 
-		.corner a,
-		.corner a:hover {
+		a, a:hover {
 			color: gray;
 		}
 
@@ -58,15 +57,6 @@
 			color: white;
 		}
 
-		.dark .corner {
-			color: gray;
-		}
-
-		.dark .corner a,
-		.dark .corner a:hover {
-			color: silver;
-		}
-
 		.btn-light {
 			display: none;
 		}
@@ -80,7 +70,7 @@
 		}
 	</style>
 </head>
-<body onload="init()">
+<body>
 	<table>
 		<tr>
 			<td id="content">
@@ -89,53 +79,75 @@
 		</tr>
 	</table>
 	<div id="home" class="corner"><a href="http://zen.sapiens.ws/">Zen</a></div>
-	<div id="global_settings" class="corner"></div>
-	<div id="local_settings" class="corner">
+	<div id="global_settings" class="corner">
 		<a href="#" class="action btn-dark" onclick="makeDark()">Dark</a>
 		<a href="#" class="action btn-light" onclick="makeLight()">Light</a>
 	</div>
+	<div id="local_settings" class="corner"></div>
 	<div id="copyright" class="corner">
 		Created by <a href="mailto:zen@sapiens.ws">Dmitriy Pankov</a>
 	</div>
 </body>
 
 <script type="text/javascript">
-var STORAGE_THEME_KEY = "zen-sapiens-ws-theme";
-var STORAGE_THEME_DARK = "dark";
-var STORAGE_THEME_LIGHT = "";
-
-function saveTheme(value) {
-	if (localStorage) {
-		localStorage.setItem(STORAGE_THEME_KEY, value);
+(function () {
+	var STORAGE_SETTINGS_KEY = "zen-sapiens-ws-settings";
+	var STORAGE_THEME_DARK = "dark";
+	var STORAGE_THEME_LIGHT = "light";
+	var STORAGE_THEME_KEY = "theme";
+	
+	var default_settings = {
+		theme: STORAGE_THEME_LIGHT
 	}
-}
 
-function readTheme() {
-	if (localStorage) {
-		return localStorage.getItem(STORAGE_THEME_KEY); 
+	function getSettings(field) {
+		var storage_settings = null;
+		if (localStorage) {
+			var settings_string = localStorage.getItem(STORAGE_SETTINGS_KEY);
+			try {
+				storage_settings = JSON.parse(settings_string)
+			} catch (e) {
+				storage_settings = null;
+			}
+		}
+		return storage_settings && storage_settings[field] || default_settings[field];
 	}
-	return STORAGE_THEME_LIGHT;
-}
 
-function makeDark() {
-	var classes = document.body.className.split(' ');
-	classes.push('dark');
-	document.body.className = classes.join(' ');
-	saveTheme(STORAGE_THEME_DARK);
-}
-
-function makeLight() {
-	var classes = document.body.className.split(' ');
-	classes = classes.filter(function (x) { return x !== 'dark'; });
-	document.body.className = classes.join(' ');
-	saveTheme(STORAGE_THEME_LIGHT);
-}
-function init() {
-	var theme = readTheme();
-	if (theme === STORAGE_THEME_DARK) {
-		makeDark();
+	function setSettings(field, value) {
+		default_settings[field] = value;
+		if (localStorage) {
+			localStorage.setItem(STORAGE_SETTINGS_KEY, JSON.stringify(default_settings));
+		}
 	}
-}
+
+	function makeDark() {
+		setSettings(STORAGE_THEME_KEY, STORAGE_THEME_DARK);
+		var classes = document.body.className.split(' ');
+		classes.push('dark');
+		document.body.className = classes.join(' ');
+	}
+
+	function makeLight() {
+		setSettings(STORAGE_THEME_KEY, STORAGE_THEME_LIGHT);
+		var classes = document.body.className.split(' ');
+		classes = classes.filter(function (x) { return x !== 'dark'; });
+		document.body.className = classes.join(' ');
+	}
+
+	function init() {
+		var theme = getSettings(STORAGE_THEME_KEY);
+		if (theme === STORAGE_THEME_DARK) {
+			makeDark();
+		} else {
+			makeLight();
+		}
+	}
+
+	window.makeDark = makeDark;
+	window.makeLight = makeLight;
+	window.onload = init;
+
+})();
 </script>
 
 </html>
