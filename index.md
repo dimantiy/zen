@@ -10,3 +10,7 @@ title: Zen
 [No](/say/no)
 
 [Groot](/say/groot)
+
+[Admin](/say/admin)
+
+[Timmy](/say/timmy)
