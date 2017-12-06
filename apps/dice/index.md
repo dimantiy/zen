@@ -4,9 +4,9 @@ title: Yes
 <style type="text/css">
 .dice {
     position: relative;
-    width: 10em;
-    height: 10em;
-    border-radius: 1em;
+    width: 11em;
+    height: 11em;
+    border-radius: 1.5em;
     background: black;
     margin: 0 auto;
 }
@@ -25,22 +25,22 @@ title: Yes
     background: black;
 }
 .dice_top {
-    top: 1em;
+    top: 1.5em;
 }
 .dice_middle {
-    top: 4em;
+    top: 4.5em;
 }
 .dice_bottom {
-    top: 7em;
+    top: 7.5em;
 }
 .dice_left {
-    left: 1em;
+    left: 1.5em;
 }
 .dice_center {
-    left: 4em;
+    left: 4.5em;
 }
 .dice_right {
-    left: 7em;
+    left: 7.5em;
 }
 .dice.dice_one   .dice_point.dice_one,
 .dice.dice_two   .dice_point.dice_two,
