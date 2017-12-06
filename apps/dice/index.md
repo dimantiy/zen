@@ -8,16 +8,17 @@ title: Yes
     height: 10em;
     border-radius: 1em;
     background: black;
+    margin: 0 auto;
 }
 .dark .dice {
     background: white;
 }
 .dice_point {
     position: absolute;
-    widht: 2em;
+    width: 2em;
     height: 2em;
     border-radius: 1em;
-    backgroud: white;
+    background: white;
     display: none;
 }
 .dark .dice_point {
@@ -41,12 +42,12 @@ title: Yes
 .dice_right {
     left: 7em;
 }
-.dice_one   .dice_one,
-.dice_two   .dice_two,
-.dice_three .dice_three,
-.dice_four  .dice_four,
-.dice_five  .dice_five,
-.dice_six   .dice_siz, {
+.dice.dice_one   .dice_point.dice_one,
+.dice.dice_two   .dice_point.dice_two,
+.dice.dice_three .dice_point.dice_three,
+.dice.dice_four  .dice_point.dice_four,
+.dice.dice_five  .dice_point.dice_five,
+.dice.dice_six   .dice_point.dice_six {
     display: block
 }
 </style>
