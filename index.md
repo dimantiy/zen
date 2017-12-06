@@ -3,18 +3,11 @@ title: Zen
 ---
 # Zen
 
-### Say
-
-[Yes](/say/yes)
-
-[No](/say/no)
-
-[Groot](/say/groot)
-
-[Admin](/say/admin)
-
-[Timmy](/say/timmy)
-
 ### Apps
 
 [Dice](/apps/dice)
+
+### Say
+
+[Admin](/say/admin) [Groot](/say/groot) [No](/say/no) [Timmy](/say/timmy) [Yes](/say/yes)
+
