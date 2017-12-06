@@ -14,3 +14,7 @@ title: Zen
 [Admin](/say/admin)
 
 [Timmy](/say/timmy)
+
+### Apps
+
+[Dice](/apps/dice)
