@@ -1,5 +1,5 @@
 ---
-title: Yes
+title: Dice
 ---
 <style type="text/css">
 .dice {
