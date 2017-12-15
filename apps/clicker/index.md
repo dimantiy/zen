@@ -4,6 +4,12 @@ title: Clicker
 
 # Clicker
 
+<style type="text/css">
+#clicker::selection {
+    background: transparent;
+}
+</style>
+
 <script type="text/javascript">
 (function () {
     var root_node = document.getElementById('content');
