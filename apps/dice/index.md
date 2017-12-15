@@ -1,5 +1,5 @@
 ---
-title: Yes
+title: Dice
 ---
 <style type="text/css">
 .dice {
@@ -62,16 +62,24 @@ title: Yes
 </div>
 <script type="text/javascript">
 (function () {
+    function dice_rand() {
+        var dice = document.getElementById('dice');
+        var dice_classes = [
+            'dice_one',
+            'dice_two',
+            'dice_three',
+            'dice_four',
+            'dice_five',
+            'dice_six'
+        ];
+        var index = Math.round(Math.random() * 6) % 6;
+        dice.className = 'dice ' + dice_classes[index];
+    }
+
     var dice = document.getElementById('dice');
-    var dice_classes = [
-        'dice_one',
-        'dice_two',
-        'dice_three',
-        'dice_four',
-        'dice_five',
-        'dice_six'
-    ];
-    var index = Math.round(Math.random() * 6) % 6;
-    dice.className += ' ' + dice_classes[index];
+    dice.style.cursor = 'pointer';
+    dice.onclick = dice_rand;
+
+    dice_rand();
 })();
 </script>
