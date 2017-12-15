@@ -5,9 +5,9 @@ title: Zen
 
 ### Apps
 
-[Clicker](/apps/clicker) [Dice](/apps/dice)
+[Clicker](/apps/clicker/) [Dice](/apps/dice/)
 
 ### Say
 
-[Admin](/say/admin) [Groot](/say/groot) [No](/say/no) [Timmy](/say/timmy) [Yes](/say/yes)
+[Admin](/say/admin/) [Groot](/say/groot/) [No](/say/no/) [Timmy](/say/timmy/) [Yes](/say/yes/)
 
