@@ -5,7 +5,7 @@ title: Zen
 
 ### Apps
 
-[Clicker](/apps/clicker/) [Dice](/apps/dice/)
+[Clicker](/apps/clicker/) [Dice](/apps/dice/) [Password](/apps/password/)
 
 ### Say
 
