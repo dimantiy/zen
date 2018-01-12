@@ -16,7 +16,7 @@ title: String
     border-radius: 1em;
     box-sizing: border-box;
     background-color: white;
-    border-size: 0.33em black solid;
+    border: 0.33em black solid;
 }
 .dark .string_point{
     background-color: black;
