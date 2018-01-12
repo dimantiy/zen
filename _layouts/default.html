@@ -70,24 +70,6 @@
 		}
 	</style>
 </head>
-<body>
-	<table>
-		<tr>
-			<td id="content">
-				{{ content }}
-			</td>
-		</tr>
-	</table>
-	<div id="home" class="corner"><a href="http://zen.sapiens.ws/">Zen</a></div>
-	<div id="global_settings" class="corner">
-		<a href="#" class="action btn-dark" onclick="makeDark()">Dark</a>
-		<a href="#" class="action btn-light" onclick="makeLight()">Light</a>
-	</div>
-	<div id="local_settings" class="corner"></div>
-	<div id="copyright" class="corner">
-		Created by <a href="mailto:zen@sapiens.ws">Dmitriy Pankov</a>
-	</div>
-</body>
 
 <script type="text/javascript">
 (function () {
@@ -143,11 +125,36 @@
 		}
 	}
 
-	window.makeDark = makeDark;
-	window.makeLight = makeLight;
+	var zen = {
+		makeDark: makeDark,
+		makeLight: makeLight,
+		setSettings: setSettings,
+		getSettings: getSettings
+	};
+
+	window.zen = zen;
 	window.onload = init;
 
 })();
 </script>
+
+<body>
+	<table>
+		<tr>
+			<td id="content">
+				{{ content }}
+			</td>
+		</tr>
+	</table>
+	<div id="home" class="corner"><a href="http://zen.sapiens.ws/">Zen</a></div>
+	<div id="global_settings" class="corner">
+		<a href="#" class="action btn-dark" onclick="zen.makeDark()">Dark</a>
+		<a href="#" class="action btn-light" onclick="zen.makeLight()">Light</a>
+	</div>
+	<div id="local_settings" class="corner"></div>
+	<div id="copyright" class="corner">
+		Created by <a href="mailto:zen@sapiens.ws">Dmitriy Pankov</a>
+	</div>
+</body>
 
 </html>
