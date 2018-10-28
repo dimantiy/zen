@@ -1,7 +1,8 @@
 ---
 title: Password
+layout: default
 ---
-<h1 id="password"></h1>
+<h1 id="password" style="font-family: monospace"></h1>
 <script type="text/javascript">
 (function () {
     var alphabet = "QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm1234567890";

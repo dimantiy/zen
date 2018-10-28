@@ -1,5 +1,6 @@
 ---
 title: Clicker
+layout: default
 ---
 
 # Clicker

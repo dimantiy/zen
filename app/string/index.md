@@ -1,11 +1,15 @@
 ---
 title: String
+layout: default
 ---
 <style type="text/css">
 #string {
     position: relative;
     overflow: hidden;
     height: 100%;
+}
+#content {
+    padding: 0em;
 }
 .string_point {
     width: 2em;
