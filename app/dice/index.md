@@ -1,5 +1,6 @@
 ---
 title: Dice
+layout: default
 ---
 <style type="text/css">
 .dice {

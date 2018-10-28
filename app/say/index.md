@@ -1,5 +1,6 @@
 ---
 title: Say
+layout: default
 ---
 <h1 id="say"></h1>
 <script>

@@ -1,5 +1,6 @@
 ---
 title: Zen
+layout: default
 ---
 # Zen
 

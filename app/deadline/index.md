@@ -1,11 +1,15 @@
 ---
 title: Deadline
+layout: default
 ---
 <style>
 #deadline {
     display: inline-block;
     line-height: 1;
     font-size: 0;
+}
+#content {
+    padding: 0;
 }
 .deadline_item {
     display: inline-block;

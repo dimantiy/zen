@@ -1,5 +1,6 @@
 ---
 title: String
+layout: default
 ---
 <style type="text/css">
 #string {
