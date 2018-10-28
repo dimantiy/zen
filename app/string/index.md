@@ -8,6 +8,9 @@ layout: default
     overflow: hidden;
     height: 100%;
 }
+#content {
+    padding: 0em;
+}
 .string_point {
     width: 2em;
     height: 2em;
